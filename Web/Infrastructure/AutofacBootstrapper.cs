@@ -15,6 +15,15 @@ namespace Web
 			StaticConfiguration.DisableErrorTraces = false;
 		}
 
+		protected override void ConfigureConventions(Nancy.Conventions.NancyConventions nancyConventions)
+		{
+			base.ConfigureConventions(nancyConventions);
+
+			nancyConventions.StaticContentsConventions.Add(Nancy.Conventions.StaticContentConventionBuilder.AddDirectory("scripts", @"Content/scripts", "js"));
+			nancyConventions.StaticContentsConventions.Add(Nancy.Conventions.StaticContentConventionBuilder.AddDirectory("styles", @"Content/styles"));
+			nancyConventions.StaticContentsConventions.Add(Nancy.Conventions.StaticContentConventionBuilder.AddDirectory("vendor", @"Content/vendor"));
+		}
+
 		protected override void ConfigureApplicationContainer(ILifetimeScope existingContainer)
 		{
 			// Perform registration that should have an application lifetime

@@ -1,3 +1,90 @@
-﻿
-Hello
-@Model
+﻿<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+	<meta charset="utf-8">
+	<!-- If you delete this meta tag World War Z will become a reality -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Wiki</title>
+	<link rel="stylesheet" href="vendor/foundation/css/foundation.css">
+	<script src="/vendor/foundation/js/vendor/modernizr.js"></script>
+</head>
+<body>
+	     
+ 
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="nav-bar right">
+       <ul class="button-group">
+         <li><a href="#" class="button">Link 3</a></li>
+         <li><a href="#" class="button">Link 4</a></li>
+        </ul>
+      </div>
+      <h1>Wiki <small>Markdown Wiki Sharp</small></h1>
+      <hr/>
+    </div>
+  </div>
+
+  <div class="row">
+      <aside class="large-3 columns">
+ 
+      <h5>Pinned</h5>
+      <ul class="side-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Index</a></li>
+        <li><a href="#">Recent</a></li>
+        <li><a href="#">Admin</a></li>
+      </ul>
+ 
+      <div class="panel">
+        <h5>Recent Changes</h5>
+        <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+        <a href="#">Read More →</a>
+      </div>
+ 
+    </aside>
+    <div class="large-9 columns" role="content">
+      <article>
+ 		@Model
+      </article>
+ 
+      <hr/>
+ 
+      <article>
+      	@Model
+      </article>
+ 
+    </div>
+  </div>
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr/>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+    
+
+	<script src="/vendor/foundation/js/vendor/jquery.js"></script>
+	<script src="/vendor/foundation/js/vendor/fastclick.js"></script>
+	<script src="/vendor/foundation/js/foundation.min.js"></script>
+	<script src="scripts/index.js"></script>
+
+	<script>
+	  $(document).foundation();
+	</script>
+</body>
+</html>

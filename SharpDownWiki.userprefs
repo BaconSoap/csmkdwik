@@ -1,25 +1,30 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web/Infrastructure/WebModule.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Web/views/index.html">
     <Files>
-      <File FileName="Web/Infrastructure/WebModule.cs" Line="2" Column="2" />
-      <File FileName="Core/MarkdownTranslatorService.cs" Line="4" Column="4" />
-      <File FileName="Data/IMarkdownRepository.cs" Line="43" Column="43" />
-      <File FileName="Data/MarkdownFileRepository.cs" Line="33" Column="33" />
+      <File FileName="Web/Infrastructure/AutofacBootstrapper.cs" Line="140" Column="140" />
+      <File FileName="Web/views/index.html" Line="2" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Core" expanded="True">
             <Node name="References" expanded="True" />
+            <Node name="Packages" expanded="True" />
           </Node>
           <Node name="Data" expanded="True">
             <Node name="References" expanded="True" />
+            <Node name="Packages" expanded="True" />
           </Node>
           <Node name="Web" expanded="True">
-            <Node name="References" expanded="True" selected="True" />
+            <Node name="Content" expanded="True">
+              <Node name="scripts" expanded="True" />
+            </Node>
             <Node name="Infrastructure" expanded="True" />
             <Node name="Routes" expanded="True" />
+            <Node name="views" expanded="True">
+              <Node name="index.html" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

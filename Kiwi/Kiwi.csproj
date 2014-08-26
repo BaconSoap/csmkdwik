@@ -3,11 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{00AD7C9F-8F25-4A51-AC07-7202C4D4A27E}</ProjectGuid>
+    <ProjectGuid>{23FC567C-A5B2-4EA1-8839-6028D509AA97}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Core</RootNamespace>
-    <AssemblyName>Core</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>Kiwi</RootNamespace>
+    <AssemblyName>Kiwi</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,37 +26,27 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{1C455738-79E9-4DF5-9458-3A06620B0745}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Kiwi\Kiwi.csproj">
-      <Project>{23FC567C-A5B2-4EA1-8839-6028D509AA97}</Project>
-      <Name>Kiwi</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    <Reference Include="System" />
+    <Reference Include="ColorCode">
+      <HintPath>..\packages\ColorCode.1.0.1\lib\ColorCode.dll</HintPath>
     </Reference>
     <Reference Include="MarkdownSharp">
       <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
     </Reference>
-    <Reference Include="ColorCode">
-      <HintPath>..\packages\ColorCode.1.0.1\lib\ColorCode.dll</HintPath>
-    </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CoreExtensions.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="IContentProvider.cs" />
+    <Compile Include="IMarkdownService.cs" />
+    <Compile Include="ITranformers.cs" />
+    <Compile Include="MarkdownService.cs" />
+    <Compile Include="Tranformers.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MarkdownTranslatorService.cs" />
-    <Compile Include="CoreModule.cs" />
-    <Compile Include="Markdown\Checkbox.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Markdown\" />
   </ItemGroup>
 </Project>
