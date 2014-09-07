@@ -1,5 +1,6 @@
 ﻿using System;
 using Data;
+using System.Collections.Generic;
 
 namespace Core
 {
@@ -13,7 +14,7 @@ namespace Core
 
 		public string GetHtml(string path)
 		{
-			var svc = new Kiwi.Markdown.MarkdownService(new MarkdownProvider(Repo, new Markdown.CheckboxTransformer()));
+			var svc = new Kiwi.Markdown.MarkdownService(new MarkdownProvider(Repo));
 			
 			return svc.GetDocument(path).Content;
 		}
@@ -22,16 +23,28 @@ namespace Core
 	public class MarkdownProvider: Kiwi.Markdown.IContentProvider
 	{
 		private IMarkdownRepository Repo { get; set; }
-		private Markdown.CheckboxTransformer Checkbox { get; set; }
-		public MarkdownProvider(IMarkdownRepository repo, Markdown.CheckboxTransformer checkboxTransformer)
+		private List<IMarkdownTransformer> Transformers { get; set;}
+
+		public MarkdownProvider(IMarkdownRepository repo)
 		{
 			Repo = repo;
-			Checkbox = checkboxTransformer;
+			Transformers = new List<IMarkdownTransformer>();
+			Add(new Markdown.CheckboxTransformer());
+		}
+
+		private void Add(IMarkdownTransformer transformer)
+		{
+			Transformers.Add(transformer);
 		}
 
 		public string GetContent(string docId)
 		{
-			return Checkbox.Transform(Repo.GetMarkdownDocument(docId));
+			var data = Repo.GetMarkdownDocument(docId);
+			foreach (var transformer in Transformers)
+			{
+				data = transformer.Transform (data);
+			}
+			return data;
 		}
 	}
 

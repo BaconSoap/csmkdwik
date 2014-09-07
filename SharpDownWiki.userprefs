@@ -2,33 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Web/views/index.html">
     <Files>
-      <File FileName="Web/Infrastructure/AutofacBootstrapper.cs" Line="140" Column="140" />
-      <File FileName="Web/views/index.html" Line="2" Column="2" />
+      <File FileName="Web/Infrastructure/AutofacBootstrapper.cs" Line="1" Column="1" />
+      <File FileName="Web/views/index.html" Line="7" Column="7" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Core" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="Packages" expanded="True" />
-          </Node>
-          <Node name="Data" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="Packages" expanded="True" />
-          </Node>
-          <Node name="Web" expanded="True">
-            <Node name="Content" expanded="True">
-              <Node name="scripts" expanded="True" />
-            </Node>
-            <Node name="Infrastructure" expanded="True" />
-            <Node name="Routes" expanded="True" />
-            <Node name="views" expanded="True">
-              <Node name="index.html" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

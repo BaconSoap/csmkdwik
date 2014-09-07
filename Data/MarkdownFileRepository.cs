@@ -28,7 +28,8 @@ Right now it is C# app hosted in ASP.NET, but it can easily be converted to a co
 ####TODO
 
 - [ ] thing one
-- [ ] thing two
+- [x] thing two
+- [X] thing two
 
 ";
 		}
