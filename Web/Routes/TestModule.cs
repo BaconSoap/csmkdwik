@@ -12,6 +12,14 @@ namespace Web
 			Get ["/"] = _ => {
 				return View["index.html", service.GetHtml("index.md")];
 			};
+
+			Get["/{name}"] = _ => {
+				return View["index.html", service.GetHtml(_.name + ".md")];
+			};
+
+			Get["/all"] = _ => {
+				return View["all.html", service.GetAll()];
+			};
 		}
 	}
 }

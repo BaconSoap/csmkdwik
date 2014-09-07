@@ -18,6 +18,11 @@ namespace Core
 			
 			return svc.GetDocument(path).Content;
 		}
+
+		public List<KeyValuePair<string, string>> GetAll()
+		{
+			return Repo.GetAll();
+		}
 	}
 
 	public class MarkdownProvider: Kiwi.Markdown.IContentProvider

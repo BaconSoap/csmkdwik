@@ -51,6 +51,7 @@
     <Reference Include="ColorCode">
       <HintPath>..\packages\ColorCode.1.0.1\lib\ColorCode.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -92,6 +93,7 @@
     <Content Include="Content\vendor\foundation\js\vendor\jquery.js" />
     <Content Include="Content\vendor\foundation\js\vendor\modernizr.js" />
     <Content Include="Content\vendor\foundation\js\vendor\placeholder.js" />
+    <Content Include="views\all.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\" />
