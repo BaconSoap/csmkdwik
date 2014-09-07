@@ -5,6 +5,7 @@ using Nancy.ModelBinding;
 using Nancy.Extensions;
 using Nancy.Responses.Negotiation;
 using MarkdownSharpPlus;
+using Data;
 
 
 namespace Web
@@ -19,7 +20,7 @@ namespace Web
 			};
 
 			Get["/{name}"] = _ => {
-				IMarkdownPage model = service.GetPage(_.name + ".md");
+				MarkdownPage model = service.GetPage(_.name + ".md");
 				return Negotiate
 					.WithModel(model)
 					.WithView("index.html");
@@ -31,7 +32,7 @@ namespace Web
 
 			Post["/{name}/checkbox/{id}"] = _ => {
 				var checkbox = this.Bind<CheckboxDto>();
-				IMarkdownPage page = service.GetPage(_.name);
+				MarkdownPage page = service.GetPage(_.name);
 				return new {result = true};
 			};
 

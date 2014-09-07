@@ -1,8 +1,10 @@
+using Data;
+
 namespace MarkdownSharpPlus.Transformers
 {
     public interface IMarkdownService
     {
-		IMarkdownPage GetPage(string docId);
+		MarkdownPage GetPage(string docId);
 
     	string ToHtml(string markdown);
     }

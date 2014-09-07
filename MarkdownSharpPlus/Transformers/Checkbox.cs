@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using MarkdownSharpPlus;
+using Data;
 
 namespace MarkdownSharpPlus.Transformers
 {
@@ -16,7 +17,7 @@ namespace MarkdownSharpPlus.Transformers
 			CheckedReplacer = new Regex(@"\[([xX\x20])\]", RegexOptions.Compiled);
 		}
 
-		public void Transform(IMarkdownPage input)
+		public void Transform(MarkdownPage input)
 		{
 			int id = 0;
 			input.Contents = CheckedReplacer.Replace(input.Contents, (m) => {

@@ -14,7 +14,7 @@ namespace Core
 			Repo = repo;
 		}
 
-		public IMarkdownPage GetPage(string path)
+		public MarkdownPage GetPage(string path)
 		{
 			var svc = new MarkdownSharpPlus.Transformers.MarkdownService(new MarkdownProvider(Repo));
 			
@@ -45,7 +45,7 @@ namespace Core
 			Transformers.Add(transformer);
 		}
 
-		public IMarkdownPage GetContent(string docId)
+		public MarkdownPage GetContent(string docId)
 		{
 			var data = Repo.GetMarkdownDocument(docId);
 

@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using MarkdownSharp;
+using Data;
 
 namespace MarkdownSharpPlus.Transformers
 {
@@ -34,7 +35,7 @@ namespace MarkdownSharpPlus.Transformers
 			};
 		}
 
-		public IMarkdownPage GetPage(string docId)
+		public MarkdownPage GetPage(string docId)
 		{
 			var page = ContentProvider.GetContent(docId);
 			page.Contents = ToHtml(page.Contents);

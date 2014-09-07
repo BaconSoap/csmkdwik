@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using MarkdownSharpPlus;
+using Data;
 
 namespace MarkdownSharpPlus.Transformers
 {
@@ -10,7 +11,7 @@ namespace MarkdownSharpPlus.Transformers
 
 		#region IMarkdownTransformer implementation
 
-		public void Transform(IMarkdownPage input)
+		public void Transform(MarkdownPage input)
 		{
 			input.Contents = LinkRegex.Replace(input.Contents, @"<a href=""/$1"">$1</a>");
 		}

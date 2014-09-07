@@ -1,7 +1,9 @@
+using Data;
+
 namespace MarkdownSharpPlus.Transformers
 {
 	public interface IContentProvider
 	{
-		IMarkdownPage GetContent(string docId);
+		MarkdownPage GetContent(string docId);
 	}
 }
