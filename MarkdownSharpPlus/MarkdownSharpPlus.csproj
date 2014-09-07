@@ -45,6 +45,10 @@
     <Compile Include="MarkdownService.cs" />
     <Compile Include="Tranformers.cs" />
     <Compile Include="IMarkdownPage.cs" />
+    <Compile Include="MarkdownPage.cs" />
+    <Compile Include="Markdown\Checkbox.cs" />
+    <Compile Include="Markdown\ITransformer.cs" />
+    <Compile Include="Markdown\LinkTransformer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
