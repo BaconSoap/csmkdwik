@@ -5,7 +5,7 @@ namespace Data
 {
 	public interface IMarkdownRepository
 	{
-		string GetMarkdownDocument(string path);
+		MarkdownPage GetMarkdownDocument(string path);
 		List<KeyValuePair<string, string>> GetAll();
 	}
 }

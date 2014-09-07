@@ -1,6 +1,7 @@
 ﻿using System;
 using Data;
 using System.Collections.Generic;
+using Kiwi;
 
 namespace Core
 {
@@ -12,11 +13,11 @@ namespace Core
 			Repo = repo;
 		}
 
-		public string GetHtml(string path)
+		public IMarkdownPage GetPage(string path)
 		{
 			var svc = new Kiwi.Markdown.MarkdownService(new MarkdownProvider(Repo));
 			
-			return svc.GetDocument(path).Content;
+			return svc.GetPage(path);
 		}
 
 		public List<KeyValuePair<string, string>> GetAll()
@@ -43,12 +44,12 @@ namespace Core
 			Transformers.Add(transformer);
 		}
 
-		public string GetContent(string docId)
+		public IMarkdownPage GetContent(string docId)
 		{
 			var data = Repo.GetMarkdownDocument(docId);
 			foreach (var transformer in Transformers)
 			{
-				data = transformer.Transform (data);
+				data.Contents = transformer.Transform (data.Contents);
 			}
 			return data;
 		}

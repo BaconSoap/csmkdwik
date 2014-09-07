@@ -103,12 +103,15 @@
     <Folder Include="Content\scripts\" />
     <Folder Include="Content\styles\" />
     <Folder Include="Content\vendor\" />
+    <Folder Include="Dtos\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\AutofacBootstrapper.cs" />
     <Compile Include="Infrastructure\WebModule.cs" />
     <Compile Include="Infrastructure\WebLifetimeModule.cs" />
-    <Compile Include="Routes\TestModule.cs" />
+    <Compile Include="Routes\MarkdownWikiHttpModule.cs" />
+    <Compile Include="Dtos\PageDto.cs" />
+    <Compile Include="Dtos\CheckboxDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

@@ -34,14 +34,12 @@ namespace Kiwi.Markdown
 			};
 		}
 
-        public virtual Document GetDocument(string docId)
-        {
-            return new Document
-            {
-                Title = _invariantTextInfo.ToTitleCase(docId.Replace("-", " ")),
-                Content = ToHtml(ContentProvider.GetContent(docId))
-            };
-        }
+		public IMarkdownPage GetPage(string docId)
+		{
+			var page = ContentProvider.GetContent(docId);
+			page.Contents = ToHtml(page.Contents);
+			return page;
+		}
 
 		public string ToHtml(string markdown)
 		{

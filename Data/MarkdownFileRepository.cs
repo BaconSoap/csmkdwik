@@ -38,14 +38,14 @@ namespace Data
 			writer.Flush();
 			writer.Dispose();
 		}
-		public string GetMarkdownDocument(string path)
+		public MarkdownPage GetMarkdownDocument(string path)
 		{
 			var data = String.Empty;
 			using(var reader = new StreamReader(new FileStream(Path.Combine(RootPath, path), FileMode.Open)))
 			{
 				data = reader.ReadToEnd();
 			}
-			return data;
+			return new MarkdownPage {Contents = data};
 		}
 
 		public List<KeyValuePair<string, string>> GetAll()
