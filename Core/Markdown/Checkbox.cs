@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using Kiwi;
 
 namespace Core.Markdown
 {
@@ -15,30 +16,31 @@ namespace Core.Markdown
 			CheckedReplacer = new Regex(@"\[([xX\x20])\]", RegexOptions.Compiled);
 		}
 
-		public string Transform(string input)
+		public void Transform(IMarkdownPage input)
 		{
 			int id = 0;
-			return CheckedReplacer.Replace(input, (m) => {
+			input.Contents = CheckedReplacer.Replace(input.Contents, (m) => {
 				var html = "";
 				switch (m.Groups[1].Value) {
-					case "x":
-					case "X":
+				case "x":
+				case "X":
 					{
 						html = CheckedCheckbox;
 						break;
 					}
-					case " ":
+				case " ":
 					{
 						html = UncheckedCheckbox;
 						break;
 					}
-					default:
-						throw new NotImplementedException();
+				default:
+					throw new NotImplementedException();
 				}
 				html = String.Format(html, id++);
 				return html;
 			});
 		}
+
 	}
 }
 

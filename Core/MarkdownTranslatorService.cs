@@ -47,10 +47,9 @@ namespace Core
 		public IMarkdownPage GetContent(string docId)
 		{
 			var data = Repo.GetMarkdownDocument(docId);
-			foreach (var transformer in Transformers)
-			{
-				data.Contents = transformer.Transform (data.Contents);
-			}
+
+			Transformers.ForEach(t => t.Transform(data));
+
 			return data;
 		}
 	}

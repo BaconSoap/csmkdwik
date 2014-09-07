@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using Kiwi;
 
 namespace Core.Markdown
 {
@@ -9,9 +10,9 @@ namespace Core.Markdown
 
 		#region IMarkdownTransformer implementation
 
-		public string Transform(string input)
+		public void Transform(IMarkdownPage input)
 		{
-			return LinkRegex.Replace(input, @"<a href=""/$1"">$1</a>");
+			input.Contents = LinkRegex.Replace(input.Contents, @"<a href=""/$1"">$1</a>");
 		}
 
 		#endregion

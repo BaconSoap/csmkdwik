@@ -1,10 +1,11 @@
 ﻿using System;
+using Kiwi;
 
 namespace Core
 {
 	public interface IMarkdownTransformer
 	{
-		string Transform(string input);
+		void Transform(IMarkdownPage input);
 	}
 }
 

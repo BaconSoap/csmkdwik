@@ -19,9 +19,9 @@ namespace Web
 			};
 
 			Get["/{name}"] = _ => {
-				var model = service.GetPage(_.name + ".md");
+				IMarkdownPage model = service.GetPage(_.name + ".md");
 				return Negotiate
-					.WithModel((IMarkdownPage)model)
+					.WithModel(model)
 					.WithView("index.html");
 			};
 
@@ -31,6 +31,7 @@ namespace Web
 
 			Post["/{name}/checkbox/{id}"] = _ => {
 				var checkbox = this.Bind<CheckboxDto>();
+				IMarkdownPage page = service.GetPage(_.name);
 				return new {result = true};
 			};
 
