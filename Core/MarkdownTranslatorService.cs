@@ -35,6 +35,7 @@ namespace Core
 			Repo = repo;
 			Transformers = new List<IMarkdownTransformer>();
 			Add(new Markdown.CheckboxTransformer());
+			Add(new Markdown.LinkTransformer());
 		}
 
 		private void Add(IMarkdownTransformer transformer)

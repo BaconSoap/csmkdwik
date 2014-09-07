@@ -58,6 +58,7 @@
     <Compile Include="CoreModule.cs" />
     <Compile Include="Markdown\Checkbox.cs" />
     <Compile Include="Markdown\ITransformer.cs" />
+    <Compile Include="Markdown\LinkTransformer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Markdown\" />
