@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using ColorCode;
 
-namespace MarkdownSharpPlus.Markdown
+namespace MarkdownSharpPlus.Transformers
 {
 	public class Tranformers : ITranformers
 	{

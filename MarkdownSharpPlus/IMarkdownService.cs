@@ -1,4 +1,4 @@
-namespace MarkdownSharpPlus.Markdown
+namespace MarkdownSharpPlus.Transformers
 {
     public interface IMarkdownService
     {

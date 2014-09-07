@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MarkdownSharpPlus.Markdown
+namespace MarkdownSharpPlus.Transformers
 {
 	public interface ITranformers
 	{

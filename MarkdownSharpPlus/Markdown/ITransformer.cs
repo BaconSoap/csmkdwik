@@ -1,7 +1,7 @@
 ﻿using System;
 using MarkdownSharpPlus;
 
-namespace Core
+namespace MarkdownSharpPlus.Transformers
 {
 	public interface IMarkdownTransformer
 	{

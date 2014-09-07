@@ -2,6 +2,7 @@
 using Data;
 using System.Collections.Generic;
 using MarkdownSharpPlus;
+using MarkdownSharpPlus.Transformers;
 
 namespace Core
 {
@@ -15,7 +16,7 @@ namespace Core
 
 		public IMarkdownPage GetPage(string path)
 		{
-			var svc = new MarkdownSharpPlus.Markdown.MarkdownService(new MarkdownProvider(Repo));
+			var svc = new MarkdownSharpPlus.Transformers.MarkdownService(new MarkdownProvider(Repo));
 			
 			return svc.GetPage(path);
 		}
@@ -26,7 +27,7 @@ namespace Core
 		}
 	}
 
-	public class MarkdownProvider: MarkdownSharpPlus.Markdown.IContentProvider
+	public class MarkdownProvider: MarkdownSharpPlus.Transformers.IContentProvider
 	{
 		private IMarkdownRepository Repo { get; set; }
 		private List<IMarkdownTransformer> Transformers { get; set;}
@@ -35,8 +36,8 @@ namespace Core
 		{
 			Repo = repo;
 			Transformers = new List<IMarkdownTransformer>();
-			Add(new Markdown.CheckboxTransformer());
-			Add(new Markdown.LinkTransformer());
+			Add(new CheckboxTransformer());
+			Add(new LinkTransformer());
 		}
 
 		private void Add(IMarkdownTransformer transformer)

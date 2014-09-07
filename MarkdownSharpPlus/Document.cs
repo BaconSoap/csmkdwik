@@ -1,6 +1,6 @@
 using System;
 
-namespace MarkdownSharpPlus.Markdown
+namespace MarkdownSharpPlus.Transformers
 {
     [Serializable]
     public class Document

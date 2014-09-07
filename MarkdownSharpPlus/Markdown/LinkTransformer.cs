@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using MarkdownSharpPlus;
 
-namespace Core.Markdown
+namespace MarkdownSharpPlus.Transformers
 {
 	public class LinkTransformer: IMarkdownTransformer
 	{

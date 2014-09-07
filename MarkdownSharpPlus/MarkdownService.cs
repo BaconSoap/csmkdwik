@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using MarkdownSharp;
 
-namespace MarkdownSharpPlus.Markdown
+namespace MarkdownSharpPlus.Transformers
 {
 	public class MarkdownService : IMarkdownService
     {

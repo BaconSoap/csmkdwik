@@ -1,4 +1,4 @@
-﻿namespace MarkdownSharpPlus.Markdown
+﻿namespace MarkdownSharpPlus.Transformers
 {
 	internal static class CoreExtensions
 	{
