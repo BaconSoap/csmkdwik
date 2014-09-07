@@ -1,37 +1,49 @@
 ﻿using System;
+using System.IO;
 
 namespace Data
 {
 	public class MarkdownFileRepository: IMarkdownRepository
 	{
+		string RootPath { get; set; }
 		public MarkdownFileRepository()
 		{
+			RootPath = Environment.GetEnvironmentVariable("WIKI_DATA_ROOT");
+			if(RootPath == null)
+			{
+				RootPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "wikiData");
+				var filePath = Path.Combine(RootPath, "index.md");
+
+				if(!File.Exists(filePath))
+				{
+					CreateIndex();
+				}
+			}
+
+			if(!Directory.Exists(RootPath))
+			{
+				Directory.CreateDirectory(RootPath);
+				CreateIndex();
+			}
 		}
 			
+		public void CreateIndex()
+		{
+			var filePath = Path.Combine(RootPath, "index.md");
+			var writer = new StreamWriter(File.Open(filePath, FileMode.CreateNew));
+			writer.WriteLine("you need to setup your environment according to `README.md`");
+
+			writer.Flush();
+			writer.Dispose();
+		}
 		public string GetMarkdownDocument(string path)
 		{
-			return @"
-###[Hello](hello)
-
-This is a markdown document. It was compiled by MarkdownSharp and Kiwi, and has support for fenced code blocks, like this:
-```c#
-var a = ""hello"";
-var b = (string text) => ""hello "" + text;
-Console.WriteLine(b(a));
-```
-
-
-Markdown Wiki Sharp is a project to enable writing a wiki in Markdown. Markdown is a much more natural syntax than standard MediaWiki syntax.
-
-Right now it is C# app hosted in ASP.NET, but it can easily be converted to a command-line app, and thus into a packaged node-webkit app for a fake-native experience.
-
-####TODO
-
-- [ ] thing one
-- [x] thing two
-- [X] thing two
-
-";
+			var data = String.Empty;
+			using(var reader = new StreamReader(new FileStream(Path.Combine(RootPath, path), FileMode.Open)))
+			{
+				data = reader.ReadToEnd();
+			}
+			return data;
 		}
 
 	}

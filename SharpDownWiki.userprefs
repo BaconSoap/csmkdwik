@@ -1,9 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web/views/index.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data/MarkdownFileRepository.cs">
     <Files>
       <File FileName="Web/Infrastructure/AutofacBootstrapper.cs" Line="1" Column="1" />
-      <File FileName="Web/views/index.html" Line="7" Column="7" />
+      <File FileName="Web/views/index.html" Line="1" Column="1" />
+      <File FileName="Core/MarkdownTranslatorService.cs" Line="1" Column="1" />
+      <File FileName="Core/Markdown/Checkbox.cs" Line="1" Column="1" />
+      <File FileName="Core/Markdown/ITransformer.cs" Line="1" Column="1" />
+      <File FileName="Data/MarkdownFileRepository.cs" Line="1" Column="1" />
+      <File FileName="Web/Routes/TestModule.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

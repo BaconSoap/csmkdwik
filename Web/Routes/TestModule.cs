@@ -10,7 +10,7 @@ namespace Web
 		{
 
 			Get ["/"] = _ => {
-				return View["index.html", service.GetHtml("")];
+				return View["index.html", service.GetHtml("index.md")];
 			};
 		}
 	}
