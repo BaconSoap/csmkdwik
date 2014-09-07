@@ -2,6 +2,10 @@
 using Nancy;
 using Core;
 using Nancy.ModelBinding;
+using Nancy.Extensions;
+using Nancy.Responses.Negotiation;
+using Kiwi;
+
 
 namespace Web
 {
@@ -15,7 +19,10 @@ namespace Web
 			};
 
 			Get["/{name}"] = _ => {
-				return View["index.html", service.GetPage(_.name + ".md")];
+				var model = service.GetPage(_.name + ".md");
+				return Negotiate
+					.WithModel((IMarkdownPage)model)
+					.WithView("index.html");
 			};
 
 			Get["/all"] = _ => {
@@ -31,6 +38,8 @@ namespace Web
 				var checkbox = this.Bind<CheckboxDto>();
 				return new {result = true};
 			};
+
+
 		}
 	}
 }
