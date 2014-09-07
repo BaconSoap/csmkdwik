@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{00AD7C9F-8F25-4A51-AC07-7202C4D4A27E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdownSharpPlus", "Kiwi\MarkdownSharpPlus.csproj", "{23FC567C-A5B2-4EA1-8839-6028D509AA97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdownSharpPlus", "MarkdownSharpPlus\MarkdownSharpPlus.csproj", "{23FC567C-A5B2-4EA1-8839-6028D509AA97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
