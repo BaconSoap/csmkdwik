@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kiwi
+namespace MarkdownSharpPlus
 {
 	public interface IMarkdownPage
 	{

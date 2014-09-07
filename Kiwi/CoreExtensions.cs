@@ -1,4 +1,4 @@
-﻿namespace Kiwi.Markdown
+﻿namespace MarkdownSharpPlus.Markdown
 {
 	internal static class CoreExtensions
 	{

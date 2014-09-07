@@ -1,7 +1,7 @@
 ﻿using System;
 using Data;
 using System.Collections.Generic;
-using Kiwi;
+using MarkdownSharpPlus;
 
 namespace Core
 {
@@ -15,7 +15,7 @@ namespace Core
 
 		public IMarkdownPage GetPage(string path)
 		{
-			var svc = new Kiwi.Markdown.MarkdownService(new MarkdownProvider(Repo));
+			var svc = new MarkdownSharpPlus.Markdown.MarkdownService(new MarkdownProvider(Repo));
 			
 			return svc.GetPage(path);
 		}
@@ -26,7 +26,7 @@ namespace Core
 		}
 	}
 
-	public class MarkdownProvider: Kiwi.Markdown.IContentProvider
+	public class MarkdownProvider: MarkdownSharpPlus.Markdown.IContentProvider
 	{
 		private IMarkdownRepository Repo { get; set; }
 		private List<IMarkdownTransformer> Transformers { get; set;}

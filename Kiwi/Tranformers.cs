@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using ColorCode;
 
-namespace Kiwi.Markdown
+namespace MarkdownSharpPlus.Markdown
 {
 	public class Tranformers : ITranformers
 	{

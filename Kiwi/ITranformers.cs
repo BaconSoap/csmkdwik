@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Kiwi.Markdown
+namespace MarkdownSharpPlus.Markdown
 {
 	public interface ITranformers
 	{

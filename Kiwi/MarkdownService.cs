@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using MarkdownSharp;
 
-namespace Kiwi.Markdown
+namespace MarkdownSharpPlus.Markdown
 {
 	public class MarkdownService : IMarkdownService
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Kiwi.Markdown
+namespace MarkdownSharpPlus.Markdown
 {
     [Serializable]
     public class Document
